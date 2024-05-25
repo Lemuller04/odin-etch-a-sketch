@@ -1,17 +1,21 @@
 const container = document.querySelector(".main-container");
-const gridSize = 16;
+let gridSize = 16;
 let gridItems = [];
-let gridItemSize = container.clientWidth / gridSize;
+let setGridBtn = document.querySelector("#grid-size-button");
 
-for (let i = 0; i < gridSize; i++) {
-    for (let j = 0; j < gridSize; j++) {
-        let gridItem = document.createElement("div");
-
-        gridItem.style.width = `${gridItemSize}px`;
-        gridItem.style.height = `${gridItemSize}px`;
-
-        container.appendChild(gridItem);
-        gridItems.push(gridItem);
+function createGrid() {
+    let gridItemSize = (container.clientWidth / gridSize).toFixed(0);
+    
+    for (let i = 0; i < gridSize; i++) {
+        for (let j = 0; j < gridSize; j++) {
+            let gridItem = document.createElement("div");
+            
+            gridItem.style.width = `${gridItemSize}px`;
+            gridItem.style.height = `${gridItemSize}px`;
+            
+            container.appendChild(gridItem);
+            gridItems.push(gridItem);
+        }
     }
 }
 
@@ -19,3 +23,5 @@ gridItems.forEach((item) => item.onmouseenter = () => {
     console.log("A");
     item.style.backgroundColor = "black";
 });
+    
+createGrid();
