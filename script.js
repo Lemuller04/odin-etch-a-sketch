@@ -36,10 +36,10 @@ function deleteGrid() {
 setGridBtn.onclick = () => {
     while (1) {
         gridSize = prompt("Set grid size (1 - 100): ");
-        deleteGrid();
-        createGrid();
-
+        
         if (gridSize >= 1 && gridSize <= 100) {
+            deleteGrid();
+            createGrid();
             return;
         } else {
             alert("Please, insert a number between 1 and 100");
