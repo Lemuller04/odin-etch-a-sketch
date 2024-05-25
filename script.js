@@ -4,7 +4,7 @@ let gridItems = [];
 let setGridBtn = document.querySelector("#grid-size-button");
 
 function createGrid() {
-    let gridItemSize = (container.clientWidth / gridSize).toFixed(0);
+    let gridItemSize = Math.floor(container.clientWidth / gridSize);
     
     for (let i = 0; i < gridSize; i++) {
         for (let j = 0; j < gridSize; j++) {
@@ -16,12 +16,25 @@ function createGrid() {
             container.appendChild(gridItem);
             gridItems.push(gridItem);
         }
+
+        gridItems.forEach((item) => item.onmouseenter = () => {
+            console.log("A");
+            item.style.backgroundColor = "black";
+        });
     }
 }
 
-createGrid();
+function deleteGrid() {
+    gridItems.forEach((item) => {
+        container.removeChild(item);
+    });
+    gridItems = [];
+}
 
-gridItems.forEach((item) => item.onmouseenter = () => {
-    console.log("A");
-    item.style.backgroundColor = "black";
-});
+setGridBtn.onclick = () => {
+    gridSize = prompt("Set grid size: ");
+    deleteGrid();
+    createGrid();
+};
+
+createGrid();
