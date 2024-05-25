@@ -19,9 +19,9 @@ function createGrid() {
     }
 }
 
+createGrid();
+
 gridItems.forEach((item) => item.onmouseenter = () => {
     console.log("A");
     item.style.backgroundColor = "black";
 });
-    
-createGrid();
