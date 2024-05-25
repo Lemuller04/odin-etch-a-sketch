@@ -19,11 +19,11 @@ function createGrid() {
             container.appendChild(gridItem);
             gridItems.push(gridItem);
         }
-
-        gridItems.forEach((item) => item.onmouseenter = () => {
-            item.style.backgroundColor = "black";
-        });
     }
+
+    gridItems.forEach((item) => item.onmouseenter = () => {
+        item.style.backgroundColor = `rgb(${Math.floor(Math.random() * 256)},${Math.floor(Math.random() * 256)},${Math.floor(Math.random() * 256)})`;
+    });
 }
 
 function deleteGrid() {
@@ -34,7 +34,7 @@ function deleteGrid() {
 }
 
 setGridBtn.onclick = () => {
-    while (1) {
+    while (true) {
         gridSize = prompt("Set grid size (1 - 100): ");
         
         if (gridSize >= 1 && gridSize <= 100) {
