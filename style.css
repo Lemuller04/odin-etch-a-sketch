@@ -36,7 +36,7 @@ button {
 }
 
 .main-container {
-    min-width: 100%;
+    min-width: 640px;
     min-height: auto;
     display: flex;
     flex-wrap: wrap;
@@ -44,7 +44,7 @@ button {
 
 .main-container > div {
     background-color: white;
-    border: 1px solid black;
+    border-collapse: collapse;
 }
 
 footer {
