@@ -23,6 +23,7 @@ function createGrid() {
 
     gridItems.forEach((item) => item.onmouseenter = () => {
         item.style.backgroundColor = `rgb(${Math.floor(Math.random() * 256)},${Math.floor(Math.random() * 256)},${Math.floor(Math.random() * 256)})`;
+        item.style.opacity = `${(window.getComputedStyle(item).opacity) - .1}`;
     });
 }
 
