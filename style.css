@@ -23,7 +23,7 @@ header, footer {
 
 main {
     flex: 1;
-    padding: 3% 30%;
+    padding: 3vh 30%;
     display: flex;
     flex-direction: column;
     gap: 8px;
@@ -36,8 +36,8 @@ button {
 }
 
 .main-container {
-    min-width: 640px;
-    min-height: auto;
+    width: 640px;
+    height: 640px;
     display: flex;
     flex-wrap: wrap;
     border: solid black 1px;
